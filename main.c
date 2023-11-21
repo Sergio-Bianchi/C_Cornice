@@ -3,12 +3,17 @@
 int main() {
 
     // Dichiarazione variabili
-    int larghezza = 20;
-    int altezza = 10;
+    int larghezza = 0;
+    int altezza = 0;
     int i;
     int j;
 
 
+    // Input dati
+    printf("Inserisci la larghezza: ");
+    scanf("%d",&larghezza);
+    printf("Inserisci l'altezza: ");
+    scanf("%d",&altezza);
 
 
     // Scrivi asterischi x la larghezza
