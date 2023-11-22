@@ -43,7 +43,7 @@ void stampaOrizzontale(int width) {
 
     // Scrivi asterischi x la larghezza
 
-    for (int i = 0; i < width; i++) printf("*");
+    for (int i = 0; i < width; i++) printf("=");
     // Vai a capo
 
     printf("\n");
@@ -56,13 +56,13 @@ void stampaVerticale(int width, int height) {
     for (int i = 0; i < (height - 2); i++) {
 
         // Scrivi asterisco
-        printf("*");
+        printf("|");
 
         // Inserisci spazi per la larghezza -2 (i due lati)
         for (int j = 0; j < (width - 2); j++) printf(" ");
 
         // Asterisco e vai a capo per scrivere la prossima linea
-        printf("*\n");
+        printf("|\n");
 
     }
 }
