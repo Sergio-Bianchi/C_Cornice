@@ -75,6 +75,8 @@ void stampaVerticale(int width, int height) {
             printf("%s", titolo);
             for (int j = 0; j < (spaceMultiplier / 2); j++) printf(" ");
 
+            // Mettici dei commenti
+
         } else if (i==2) {
             int authorSpace = width-2-sizeof(author)/sizeof(author[0]);
             for (int j = 0; j < authorSpace/2; j++) printf(" ");
