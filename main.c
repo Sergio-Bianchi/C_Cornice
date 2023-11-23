@@ -10,8 +10,8 @@
  *
  * */
 
-char titolo[] = "Esercitazione: C_Menu";
-char author[] = "Sergio Bianchi";
+char titolo[] = "sssssss";
+char author[] = "sssssssssss";
 int spaceMultiplier = 4;
 
 
@@ -29,21 +29,19 @@ int main() {
     int altezza = 0;
 
 
-    // Input dati
-    /*printf("Inserisci la larghezza: ");
-    scanf("%d", &larghezza);
-    printf("Inserisci l'altezza: ");
-    scanf("%d", &altezza);*/
 
+    int widthTitle = sizeof(titolo) / sizeof(titolo[0]) + 2 + 1 * spaceMultiplier;
+    int widthAuthor = sizeof(author) / sizeof(author[0]) + 2 + 1 * spaceMultiplier;
 
+    larghezza = widthTitle;
+    if(widthAuthor>widthTitle) larghezza = widthTitle;
 
-
-    int larghezzaWIP = sizeof(titolo) / sizeof(titolo[0]) + 2 + 1 * spaceMultiplier;
+    printf("larghezza: %d \n", larghezza);
 
     //printf("%d \n", larghezzaWIP);
 
     // Chiama la funzione per stampare la cornice
-    stampaCornice(larghezzaWIP, 6);
+    stampaCornice(larghezza, 6);
 
     return 0;
 }
@@ -71,18 +69,24 @@ void stampaVerticale(int width, int height) {
 
         // Inserisci spazi per la larghezza -2 (i due lati)
         if (i == 1) {
-            for (int j = 0; j < (spaceMultiplier / 2); j++) printf(" ");
+            int authorSpace = width-2-sizeof(titolo)/sizeof(titolo[0]);
+            for (int j = 0; j < authorSpace/2; j++) printf(" ");
             printf("%s", titolo);
-            for (int j = 0; j < (spaceMultiplier / 2); j++) printf(" ");
+            for (int j = 0; j < authorSpace/2; j++) printf(" ");
+            if (authorSpace%2) printf(" ");
 
             // Mettici dei commenti
 
         } else if (i==2) {
-            int authorSpace = width-2-sizeof(author)/sizeof(author[0]);
+            int authorSpace = width -2 -1*spaceMultiplier;
             for (int j = 0; j < authorSpace/2; j++) printf(" ");
             printf("%s", author);
             for (int j = 0; j < authorSpace/2; j++) printf(" ");
             if (authorSpace%2) printf(" ");
+/*
+            printf("\nauthorSpace %d \n", authorSpace);
+*/
+
         }
 
         else {
